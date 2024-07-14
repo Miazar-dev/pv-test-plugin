@@ -1,0 +1,30 @@
+main: pv.strigidis.NoicePlugin
+name: NoicePlugin
+version: 1.0
+author: Strigidis
+api-version: 1.19
+description: Test plugin for PV server
+commands:
+  portal:
+    description: Gives you a portal gun for the test.
+    usage: /<command>
+    permission: noiceplugin.portal.gun
+    permission-message: You don't have <permission>
+  start:
+    description: Starts or reset the portal test
+    usage: /<command>
+    permission: noiceplugin.portal.test
+    permission-message: You don't have <permission>
+permissions:
+  noiceplugin.portal.*:
+    description: Gives access to portal commands
+    default: true
+    children:
+      noiceplugin.portal.gun: true
+      noiceplugin.portal.test: true
+  noiceplugin.portal.gun:
+    description: Gives access to the portal gun command
+    default: true
+  noiceplugin.portal.test:
+    description: Gives access to the portal start test command
+    default: true
